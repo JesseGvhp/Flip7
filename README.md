@@ -1,10 +1,10 @@
 # Project Title
 
-Simple overview of use/purpose.
+Moddelling the Flip7 Card Game.
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+This is a comprehensive enviroment for testing strategies for the Card game [Flip7][https://theop.games/pages/flip-7?srsltid=AU7gw4VmVf2CjvMCrBdrUqu0KNoJEMBWQeXk4h4TSvUR8n3yPJYKrgLq]
 
 ## Getting Started
 
