@@ -293,4 +293,6 @@ vcpkg_installed/
 Testing/
 .cache/
 
+
+# removed some notes
 cpp_notes.md
