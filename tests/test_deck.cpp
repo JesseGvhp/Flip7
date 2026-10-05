@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include <random> 
 #include "Deck.hpp"
+#include <map>
 
 
 
@@ -68,4 +69,69 @@ TEST(DeckTest, ReinitResetsState) {
     //Reinit the deck
     deck.initialize();
     EXPECT_EQ(deck.size(), 94u);
+}
+
+
+TEST(DeckTest, TestCardDistribution){
+    Deck deck;
+
+    std::map<int, int> number_counts;
+    std::map<int, int> bonus_counts;
+
+    int freeze_count = 0;
+    int second_chance_count = 0;
+    int flip_three_count = 0;
+    int multiplier_count = 0;
+
+    // Draining the deck and keeping track of the counts
+    while (!deck.is_empty())
+    {
+        Card c = deck.draw();
+
+        switch (c.type) {
+            case CardType::NUMBER:
+                number_counts[c.value]++;
+                break;
+            case CardType::FREEZE:
+                EXPECT_EQ(c.value, 0);
+                freeze_count++;
+                break;
+            case CardType::SECOND_CHANCE:
+                EXPECT_EQ(c.value, 0);
+                second_chance_count++;
+                break;
+            case CardType::FLIP_THREE:
+                EXPECT_EQ(c.value, 0);
+                flip_three_count++;
+                break;
+            case CardType::MULTIPLIER_X2:
+                EXPECT_EQ(c.value, 0);
+                multiplier_count++;
+                break;
+            case CardType::BONUS_POINTS:
+                bonus_counts[c.value]++;
+                break;
+        }
+    }
+
+
+    // Verify number card distribution: exactly 1x 0-value card
+    EXPECT_EQ(number_counts[0], 1);
+
+    // Verify triangular distribution: 1x 1, 2x 2, ..., 12x 12
+    for (int i = 1; i <= 12; ++i) {
+        EXPECT_EQ(number_counts[i], i);
+    }
+
+    // Verify Action cards (3 of each)
+    EXPECT_EQ(freeze_count, 3);
+    EXPECT_EQ(second_chance_count, 3);
+    EXPECT_EQ(flip_three_count, 3);
+
+    // Verify the bonus cars (+2, +4, +6, +8, +10, x2)
+    EXPECT_EQ(multiplier_count, 1);
+
+    for(int i = 1; i <= 5; ++i) {
+        EXPECT_EQ(bonus_counts[2*i], 1);
+    } 
 }
