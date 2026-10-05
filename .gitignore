@@ -293,4 +293,4 @@ vcpkg_installed/
 Testing/
 .cache/
 
-./cpp_notes.md
+cpp_notes.md
