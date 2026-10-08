@@ -4,59 +4,23 @@ Moddelling the Flip7 Card Game.
 
 ## Description
 
-This is a comprehensive enviroment for testing strategies for the Card game [Flip7][https://theop.games/pages/flip-7?srsltid=AU7gw4VmVf2CjvMCrBdrUqu0KNoJEMBWQeXk4h4TSvUR8n3yPJYKrgLq]
+This is a comprehensive enviroment for testing strategies for the Card game [Flip7](https://theop.games/pages/flip-7?srsltid=AU7gw4VmVf2CjvMCrBdrUqu0KNoJEMBWQeXk4h4TSvUR8n3yPJYKrgLq)
 
-## Getting Started
+## Overview
 
-### Dependencies
+This project contains three parts. First, the gametheoretic modelling made by hand, which gives a concrete structure of the game which then is implemented in part two via Cpp. The goal of the implementation is to give a framework in which strategies can be tested via Monte Carlo Simulations. Cpp was chosen, since the computations are quite intense, especially for the expected value functions and a initial python implementation couldn't handle this intensity.
+Part three deepdives into some proposed strategies, tested via the Monte Carlo simulations and gives recommended strategies for players playing without computers and/or complete information.
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
-
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
-
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
 
 ## Authors
 
 Contributors names and contact info
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+ex. 
+ex. [@JesseGvhp](https://github.com/JesseGvhp)
 
 ## Version History
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
 * 0.1
     * Initial Release
 
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
