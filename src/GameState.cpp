@@ -72,7 +72,7 @@ void GameState::setup_round(std::mt19937& rng) {
 int GameState::get_random_active_opponent(int current_idx, std::mt19937& rng) const {
     std::vector<int> targets;
 
-    for (size_t i = 0; i < players.size(); ++i) {
+    for (int i = 0; i < static_cast<int>(players.size()); ++i) {
         if (i != current_idx && players[i].is_active_in_round) {
             targets.push_back(i);
         }
