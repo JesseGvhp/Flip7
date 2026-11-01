@@ -9,10 +9,13 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
 endif()
 
 # Core library (renamed to flip7_core to reflect all game logic)
+# Core library (includes Policy.cpp)
 add_library(flip7_core STATIC
     src/Deck.cpp
     src/GameState.cpp
+    src/Policy.cpp
 )
+target_include_directories(flip7_core PUBLIC include)
 target_include_directories(flip7_core PUBLIC include)
 
 # Main executable
@@ -43,4 +46,10 @@ if(BUILD_TESTING)
     add_executable(game_state_tests tests/test_game_state.cpp)
     target_link_libraries(game_state_tests PRIVATE flip7_core GTest::gtest_main)
     gtest_discover_tests(game_state_tests)
+
+
+    # Policy tests
+    add_executable(policy_tests tests/test_policy.cpp)
+    target_link_libraries(policy_tests PRIVATE flip7_core GTest::gtest_main)
+    gtest_discover_tests(policy_tests)
 endif()
