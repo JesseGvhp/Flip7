@@ -13,12 +13,11 @@ Part three deepdives into some proposed strategies, tested via the Monte Carlo s
 
 
 ## Modeling
-The Modeling is done via a Markov Decision Process (MDP) which has a proven optimum via the Bellman Optimality Theorem. The goal of this part is to construct a mathematical framework of the game in which optimal decisions can be made. This guides the implementation process and gives some overview over time and space complexity.
-
+The Modeling is done via a Markov Decision Process (MDP) which has a proven optimum via the Bellman Optimality Theorem. The goal of this part is to construct a mathematical framework of the game in which optimal decisions can be made. For this a gradually built up the whole game from an ascending series of simplifications, where I start with the trivial one player game without any bonus cards and work my way up to the comprehensive n-player game. For each of those simplifications I theoretically explore the time ans state-space complexity as well as possible implemenation approaches. This guided my implementation, in particular my choice of the tech-stack involved.
 
 ## Implementation
 In this part I implemented the game with its mechanisms to run the games. It is separated into the infrastructure, i.e. the game mechanics and the player part. The latter of which provides the opportunity to run strategies. One should note, that via the first part, in particular the Bellman Equation, optimal decisions, based on the game state are proven if the player keeps track of the game. 
-Since this is not always the case in human games, my goal is to provide human calculable strategies, which sufficiently approximate the optimal choice.
+Since this is not always the case in human games, my goal is to provide human-playable strategies, which sufficiently approximate the optimal choice.
 
 
 ## Authors
